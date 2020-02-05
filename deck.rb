@@ -17,7 +17,7 @@ end
 
 class Deck
     def initialize
-        @cards = []
+        @cards = [2,3,4,5,6,7,8,9,10]
         @cards << Card.new(10, :spades)
         @cards << Card.new(9, :spades)
         @cards << Card.new(8, :spades)
@@ -78,7 +78,7 @@ class Deck
     end
 
     def deal
-        @cards.deal!
+        @cards.shift
     end
 
     def output
@@ -90,5 +90,6 @@ end
 
 deck = Deck.new
 deck.shuffle
-deck.deal
+puts "TOP CARD:"
+deck.deal.output_card
 deck.output
